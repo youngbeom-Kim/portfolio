@@ -1,6 +1,7 @@
 $(document).ready(function() {
    fullscreen();
    quickClick();
+   menuClick();
 });
 
 function fullscreen() {
@@ -82,6 +83,22 @@ function quickClick() {
         if ($("body").find("#fullpage:animated").length >= 1) return false;
 
         $(this).addClass("on").siblings("li").removeClass("on");
+
+        $("#fullpage").animate({"top" : -length + "px"}, 800, "swing");
+        return false;
+    });
+}
+
+function menuClick() {
+    $('.navbar_links a').click(function (){
+        var gnbindex = $(this).index() + 1;
+        var length = 0;
+
+        for (var i = 1; i < (gnbindex); i++) {
+            length += $(".full" + i).height();
+        }
+
+        if ($("body").find("#fullpage:animated").length >= 1) return false;
 
         $("#fullpage").animate({"top" : -length + "px"}, 800, "swing");
         return false;

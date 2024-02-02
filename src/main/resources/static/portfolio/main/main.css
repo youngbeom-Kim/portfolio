@@ -48,6 +48,16 @@ html,body {
     font-weight: bold;
 }
 
+#fullpage .introduce {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4em;
+    font-weight: bold;
+    color: #DFDFDF;
+}
+
 ul, li {
     margin: 0;
     padding: 0;
@@ -75,14 +85,11 @@ ul, li {
     background: #fff;
 }
 
-#main {
+.btn {
     position: absolute;
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-.btn {
     width: 130px;
     height: 65px;
     font-size: 20px;
