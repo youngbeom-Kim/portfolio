@@ -2,11 +2,19 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="layout/default_layout">
 <head>
-    <link rel="stylesheet" href="../portfolio/main.css"/>
+    <link rel="stylesheet" href="../portfolio/main/main.css"/>
 </head>
-<div layout:fragment="content">
-    <div class="main_button">
-        <button type="button" class="btn btn-info">알아보기</button>
+<div id="fullpage" layout:fragment="~{content}">
+    <script type="text/javascript" src="../portfolio/main/main.js"></script>
+    <div class='quick'><ul></ul></div>
+    <div class="fullsection full1" pageNum="1">
+        <div id="main">
+            <button type="button" class="btn btn-info">알아보기</button>
+        </div>
     </div>
+    <div class="fullsection full2" pageNum="2"><span>SKILL</span></div>
+    <div class="fullsection full3" pageNum="3"><span>WORKS</span></div>
+    <div class="fullsection full4" pageNum="4"><span>CONTACT</span></div>
 </div>
+
 </html>
