@@ -2,16 +2,18 @@
 <html lang="ko"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <link rel="stylesheet" href="../portfolio/header/header.css"/>
-  <link rel="stylesheet" href="../css/bootstrap.css"/>
+  <link rel="stylesheet" href="../common/css/bootstrap.min.css"/>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 </head>
-<!-- header -->
 <body>
-<div th:replace="fragment/header :: headerFragment"></div>
+<!-- header -->
+<div th:replace="~{fragment/header :: headerFragment}"></div>
 <!-- content -->
-<div layout:fragment="content"></div>
+<div layout:fragment="~{content}"></div>
 </body>
+
 </html>
