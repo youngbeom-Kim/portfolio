@@ -47,6 +47,16 @@
     left: 0;
 }
 
+.navbar_links .on::before {
+    content: ' ';
+    position: absolute;
+    bottom: -1px;
+    width: 100%;
+    left: 0;
+    height: 3px;
+    background-color: #CDCDCD;
+}
+
 .navbar_logo {
     margin-left: 5%;
     text-decoration: none;

@@ -59,30 +59,7 @@ html,body {
 }
 
 ul, li {
-    margin: 0;
-    padding: 0;
     list-style: none;
-}
-
-.quick {
-    position: fixed;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 100000;
-}
-
-.quick li {
-    width: 10px;
-    height: 10px;
-    margin-bottom: 10px;
-    border-radius: 15px;
-    border: 2px solid #fff;
-    cursor: pointer;
-}
-
-.quick .on {
-    background: #fff;
 }
 
 .btn {

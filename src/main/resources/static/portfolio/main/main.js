@@ -5,19 +5,14 @@ $(document).ready(function() {
 });
 
 function fullscreen() {
-    var pageindex = $("#fullpage > .fullsection").size();
-
-    //페이지 갯수마다 li 태그 추가
-    for (var i = 1; i <= pageindex; i++) {
-        $("#fullpage > .quick > ul").append("<li></li>");
-    }
+    var pageindex = $(".navbar_links a").size();
 
     //페이지 로드 시 on Class 생성 및 첫번째 페이지 체크 생성
-    $("#fullpage .quick ul :first-child").addClass("on");
+    $(".navbar_links a:first-child").addClass("on");
 
     //마우스 휠 이벤트
     $(window).bind("mousewheel", function(event) {
-        var page = $(".quick ul li.on");
+        var page = $(".navbar_links a.on");
 
         if ($("body").find("#fullpage:animated").length >= 1) return false;
 
@@ -35,15 +30,15 @@ function fullscreen() {
 
             if (page.index() > 0) {
                 page = page.index() - 1;
-                $("#fullpage").animate({"top" : -pagelength + "px"}, 1500, "swing");
+                $("#fullpage").animate({"top" : -pagelength + "px"}, 1250, "swing");
             }
         } else { //마우스 휠 아래로
-            var nextPage = parseInt(page.index() + 1);
+            var nextPage = page.index() + 1;
 
-            var lastPageNum = parseInt($(".quick ul li").size());
+            var lastPageNum = $(".navbar_links a").size();
 
             //퀵버튼 옮기기
-            if (page.index() <= $(".quick ul li").size() - 1) {
+            if (page.index() <= $(".navbar_links a").size() - 1) {
                 page.next().addClass("on").siblings(".on").removeClass("on");
             }
 
@@ -53,13 +48,13 @@ function fullscreen() {
                 for(var i = 1; i < (nextPage + 1); i++) {
                     pagelength += $(".full" + i).height();
                 }
-                $("#fullpage").animate({"top" : -pagelength + "px"}, 1500, "swing");
+                $("#fullpage").animate({"top" : -pagelength + "px"}, 1250, "swing");
             }
         }
     });
 
     $(window).resize(function () {
-        var resizeindex = $(".quick ul li.on").index() + 1;
+        var resizeindex = $(".navbar_links a .on").index() + 1;
 
         var pagelength = 0;
 
@@ -71,8 +66,8 @@ function fullscreen() {
     });
 }
 
-function quickClick() {
-    $(".quick li").click(function() {
+function menuClick() {
+    $(".navbar_links a").click(function() {
         var gnbindex = $(this).index() + 1;
         var length = 0;
 
@@ -82,7 +77,7 @@ function quickClick() {
 
         if ($("body").find("#fullpage:animated").length >= 1) return false;
 
-        $(this).addClass("on").siblings("li").removeClass("on");
+        $(this).addClass("on").siblings("a").removeClass("on");
 
         $("#fullpage").animate({"top" : -length + "px"}, 800, "swing");
         return false;
@@ -90,7 +85,7 @@ function quickClick() {
 }
 
 function menuClick() {
-    $('.navbar_links a').click(function (){
+    $(".navbar_links a").click(function (){
         var gnbindex = $(this).index() + 1;
         var length = 0;
 
@@ -99,6 +94,8 @@ function menuClick() {
         }
 
         if ($("body").find("#fullpage:animated").length >= 1) return false;
+
+        $(".quick li").addClass("on").siblings().removeClass("on");
 
         $("#fullpage").animate({"top" : -length + "px"}, 800, "swing");
         return false;
