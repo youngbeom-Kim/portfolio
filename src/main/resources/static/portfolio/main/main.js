@@ -1,6 +1,5 @@
 $(document).ready(function() {
    fullscreen();
-   quickClick();
    menuClick();
 });
 
@@ -95,7 +94,7 @@ function menuClick() {
 
         if ($("body").find("#fullpage:animated").length >= 1) return false;
 
-        $(".quick li").addClass("on").siblings().removeClass("on");
+        $(this).addClass("on").siblings().removeClass("on");
 
         $("#fullpage").animate({"top" : -length + "px"}, 800, "swing");
         return false;
