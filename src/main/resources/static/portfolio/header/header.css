@@ -38,7 +38,7 @@
     left: 50%;
     width: 0;
     height: 3px;
-    background-color: #CDCDCD;
+    background-color: #989898;
     transition: width 0.2s ease-in-out, left 0.2s ease;
 }
 
@@ -54,7 +54,7 @@
     width: 100%;
     left: 0;
     height: 3px;
-    background-color: #CDCDCD;
+    background-color: #989898;
 }
 
 .navbar_logo {
