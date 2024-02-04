@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PortfolioController {
 
-    @GetMapping("/")
+    @GetMapping("/main")
     public String main() {
         return "portfolio/main";
     }
