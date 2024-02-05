@@ -1,9 +1,9 @@
 spring:
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/portfoliodb
+    driverClassName: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/portfolio
     username: ybkim
-    password: ever4501
+    password: "ever4501"
 
   jpa:
     database: postgresql
