@@ -1,11 +1,10 @@
 $(document).ready(function() {
    fullscreen();
    menuClick();
+   moveButton();
 });
 
 function fullscreen() {
-    var pageindex = $(".navbar_links a").size();
-
     //페이지 로드 시 on Class 생성 및 첫번째 페이지 체크 생성
     $(".navbar_links a:first-child").addClass("on");
 
@@ -84,6 +83,21 @@ function fullscreen() {
 
         $("#fullpage").animate({"top" : -pagelength + "px"}, 800);
     });
+}
+
+function moveButton() {
+    $(".btn-info").click(function() {
+        $(".navbar_links a.on").next().addClass("on").siblings(".on").removeClass("on");
+
+        $(".navbar_links a").animate({"color": "#323232"}, 1250, "swing");
+        $(".navbar_logo").animate({"color": "#323232"}, 1250, "swing");
+
+        var pagelength=0;
+
+        pagelength += $(".full1").height();
+
+        $("#fullpage").animate({"top": -pagelength + "px"}, 1250, "swing");
+    })
 }
 
 function menuClick() {
