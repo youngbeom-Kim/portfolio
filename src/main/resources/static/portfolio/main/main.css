@@ -45,7 +45,7 @@ html,body {
 }
 
 .full3 {
-    background: lightgreen;
+    background: #454545;
 }
 
 .full4 {
@@ -129,4 +129,109 @@ ul, li {
     margin-top: 15px;
     margin-bottom: 15px;
     font-size: 1.089rem;
+}
+
+.work_container {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.left-slide {
+    height: 100%;
+    width: 30%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease-in-out;
+}
+
+.left-slide > div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.left-slide h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: -30px;
+    text-align: center;
+}
+
+.right-slide {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 30%;
+    width: 70%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.right-slide div {
+    width: 100%;
+    height: 100vh;
+    test-items: center;
+    position: relative;
+}
+
+.right-slide div img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 10px;
+    height: 80vh;
+    width: 80%;
+}
+
+button {
+    background-color: #fff;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 15px;
+}
+
+button:hover {
+    color: #222;
+}
+
+button:focus {
+    outline: none;
+}
+
+.slider-container .action-buttons button {
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    z-index: 100;
+}
+
+.slider-container .action-buttons .down-button {
+    transform: translateX(-100%);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.slider-container .action-buttons .up-button {
+    transform: translateY(-100%);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
