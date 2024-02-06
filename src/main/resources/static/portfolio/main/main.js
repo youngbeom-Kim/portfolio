@@ -2,6 +2,7 @@ $(document).ready(function() {
    fullscreen();
    menuClick();
    moveButton();
+   slideContainer();
 });
 
 function fullscreen() {
@@ -127,4 +128,43 @@ function menuClick() {
         $("#fullpage").animate({"top" : -length + "px"}, 800, "swing");
         return false;
     });
+}
+
+function slideContainer() {
+    const sliderContainer = document.querySelector(".slider-container");
+    const slideRight = document.querySelector(".right-slide");
+    const slideLeft = document.querySelector(".left-slide");
+    const upButton = document.querySelector(".up-button");
+    const downButton = document.querySelector(".down-button");
+
+    //오른쪽 슬라이드 개수
+    const slidesLength = slideRight.querySelectorAll("div").length;
+
+    let activeSlideIndex = 0;
+
+    // 왼쪽 슬라이드 top 속성 초기 위치
+    slideLeft.style.top = `-${(slidesLength - 1) * 100}vh`;
+
+    //슬라이드 방향에 따른 변화 처리 함수
+    const changeSlide = (direction) => {
+        const sliderHeight = sliderContainer.clientHeight;
+
+        // 'up' 버튼
+        if (direction === "up") {
+            activeSlideIndex++;
+            if (activeSlideIndex > slidesLength - 1) activeSlideIndex = 0;
+        // 'down' 버튼
+        } else if (direction === "down") {
+            activeSlideIndex--;
+            if (activeSlideIndex < 0) activeSlideIndex = slidesLength - 1;
+        }
+
+        // 오른쪽 왼쪽 슬라이드 위치 조정
+        slideRight.style.transform = `translateY(-${activeSlideIndex * sliderHeight}px)`;
+        slideLeft.style.transform = `translateY(${activeSlideIndex * sliderHeight}px)`;
+    };
+
+    //각 버튼에 클릭 이벤트 시 changeSlide 함수 실행
+    upButton.addEventListener("click", () => changeSlide("up"));
+    downButton.addEventListener("click", () => changeSlide("down"));
 }
