@@ -168,3 +168,30 @@ function slideContainer() {
     upButton.addEventListener("click", () => changeSlide("up"));
     downButton.addEventListener("click", () => changeSlide("down"));
 }
+
+function emailSend(){
+    var email = document.getElementById('email').value;
+    var subject = document.getElementById('subject').value;
+    var content = document.getElementById('content').value;
+
+    var messageBody = "Email " + email +
+        "<br/> Subject " + subject +
+        "<br/> Content " + content;
+
+    Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "abcd450196@gmail.com",
+        Password : "C265D146DE12452858478ACDED98E671E7D4",
+        To : 'abcd4501@naver.com',
+        From : "abcd450196@gmail.com",
+        Subject : "궁금한거 여쭤봅니다.",
+        Body : messageBody
+    }).then(
+        message => {
+            if(message=='OK'){
+                swal("Secussful", "You clicked the button!", "success");
+            } else {
+                swal("Error", "You clicked the button!", "error");
+            }
+        });
+}
