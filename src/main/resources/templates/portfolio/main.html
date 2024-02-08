@@ -115,7 +115,17 @@
             </div>
         </div>
     </div>
-    <div class="fullsection full4"><span>CONTACT</span></div>
+    <div class="fullsection full4" pageNum="4">
+        <div class="email_container">
+            <h2>궁금하신게 있을까요?</h2>
+            <form onsubmit="emailSend(); reset(); return false;">
+                <input type="email" id="email" placeholder="email" name="email" required>
+                <input type="text" id="subject" placeholder="subject" name="subject" required>
+                <input type="text" id="content" placeholder="content" name="contents" required>
+                <button type="submit" class="email_btn">submit</button>
+            </form>
+        </div>
+    </div>
 </div>
 
 </html>

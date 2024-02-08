@@ -235,3 +235,40 @@ button:focus {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+
+.email_container{
+    width: 350px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.email_container input{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #777777;
+    margin-bottom: 20px;
+    font-size: 16px;
+    outline: none;
+}
+
+.email_btn{
+    border: none !important;
+    cursor: pointer;
+    background-color: #32cd9c;
+    margin: 15px 0;
+    font-size: 16px;
+    width: 100%;
+    padding: 14px;
+}
+
+.email_btn:hover{
+    background-color: #1f7d5f;
+    color: white;
+}
